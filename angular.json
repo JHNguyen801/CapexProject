@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "routing-sample2"
+    }
+  },
+  "defaultProject": "routing-sample2",
+  "cli": {
+    "analytics": false
+  }
 }

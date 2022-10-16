@@ -1,0 +1,73 @@
+<!-- Edit html page as detail -->
+<div class="col-md-4">
+  <table class="table table-striped">
+    <thead>
+      <nav>
+        <a [routerLink]="['/edit',  project.budgetId]" routerLinkActive="active">
+          Edit
+        </a>
+      </nav>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>BudgetId:</td>
+        <td>{{project.budgetId}}</td>
+      </tr>
+      <tr>
+        <td>Project Name:</td>
+        <td>{{project.projectName}}</td>
+      </tr>
+      <tr>
+        <td>Budget Year:</td>
+        <td>{{project.budgetYear}}</td>
+      </tr>
+      <tr>
+        <td>Budget Amount:</td>
+        <td>{{project.budgetAmount}}</td>
+      </tr>
+      <tr>
+        <td>Asset Class:</td>
+        <td>{{project.assetClass}}</td>
+      </tr>
+      <tr>
+        <td>Department:</td>
+        <td>{{project.department}}</td>
+      </tr>
+      <tr>
+        <td>Business Justification:</td>
+        <td>{{project.businessJustification}}</td>
+      </tr>
+      <tr>
+        <td>Requestor:</td>
+        <td>{{project.requestor}}</td>
+      </tr>
+      <tr>
+        <td>Status:</td>
+        <td>{{project.status}}</td>
+      </tr>
+      <tr>
+        <td>Actual Spending:</td>
+        <td>{{project.actualSpending}}</td>
+      </tr>
+      <tr>
+        <td>Remaining Budget:</td>
+        <td>{{project.budgetAmount - project.actualSpending}}</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <!-- Navigate project Detail -->
+      <nav>
+        <a [routerLink]="['/details',  project.id - 1 ]" *ngIf="!(project.budgetId == 1)">
+          Prev
+        </a>
+
+        <a [routerLink]="['/details',  project.id + 1 ]" *ngIf="!(project.budgetId == totalProjects)">
+          Next
+        </a>
+      </nav>
+    </tfoot>
+
+  </table>
+</div>
