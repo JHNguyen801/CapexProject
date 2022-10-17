@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CapexAddComponent } from './capex-add.component';
+import { CapeSearchComponent } from './cape-search.component';
 
-describe('CapexAddComponent', () => {
-  let component: CapexAddComponent;
-  let fixture: ComponentFixture<CapexAddComponent>;
+describe('CapeSearchComponent', () => {
+  let component: CapeSearchComponent;
+  let fixture: ComponentFixture<CapeSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CapexAddComponent ]
+      declarations: [ CapeSearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CapexAddComponent);
+    fixture = TestBed.createComponent(CapeSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

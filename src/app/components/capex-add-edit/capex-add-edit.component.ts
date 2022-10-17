@@ -5,8 +5,8 @@ import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-capex-add',
-  templateUrl: './capex-add.component.html',
-  styleUrls: ['./capex-add.component.css'],
+  templateUrl: './capex-add-edit.component.html',
+  styleUrls: ['./capex-add-edit.component.css'],
   providers: [ProjectService]
 })
 export class CapexAddComponent implements OnInit {
@@ -32,8 +32,10 @@ export class CapexAddComponent implements OnInit {
 
   saveProject() {
     this.project = this.provider.addProject();
+    // this.provider.addProject(this.project);
     this.title = 'Edit Project';
-    localStorage.setItem('Save_project',JSON.stringify('budget.json'));
+    this.provider.dataStorage();
+    // localStorage.setItem('Save_project', JSON.stringify('budget.json'));
     // this.router.navigate(['', this.project.budgetId])
   }
 

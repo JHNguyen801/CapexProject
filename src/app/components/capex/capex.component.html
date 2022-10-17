@@ -1,3 +1,4 @@
+<!-- Project list -->
 <table>
   <thead>
     <tr>
@@ -14,7 +15,7 @@
         <th>Remaining Budget</th>
     </tr>
   </thead>
-<tr  *ngFor="let project of projects">
+<tr *ngFor="let project of projects">
   <td>{{project.budgetId}}</td>
   <td>{{project.projectName}}</td>
   <td>{{project.budgetYear}}</td>
@@ -26,7 +27,7 @@
   <td>{{project.status}}</td>
   <td>{{project.actualSpending | currency}}</td>
   <td>{{project.budgetAmount - project.actualSpending | currency}}</td>
-  <a [routerLink]="['edit/:id']"  class="btn btn-xs btn-primary right">Edit</a>
+  <a [routerLink]="['/edit', project.budgetId]"  class="btn btn-xs btn-primary right">Edit</a>
 </tr>
 
 </table>

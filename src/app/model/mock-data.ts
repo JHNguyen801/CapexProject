@@ -1,6 +1,6 @@
 import { Budget } from "./budget";
 
-export const BUDGET: Budget[] = [
+export let BUDGET: Budget[] = [
     {
         "budgetId": 1,
         "projectName": "laptop",

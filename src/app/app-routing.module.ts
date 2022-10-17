@@ -1,8 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CapexAddComponent } from './components/capex-add/capex-add.component';
-import { CapexEditComponent } from './components/capex-edit/capex-edit.component';
+import { CapexAddComponent } from './components/capex-add-edit/capex-add-edit.component';
+import { CapexEntryComponent } from './components/capex-entry/capex-entry.component';
 import { CapexRemoveComponent } from './components/capex-remove/capex-remove.component';
 import { CapexComponent } from './components/capex/capex.component';
 
@@ -11,7 +11,7 @@ const routes: Routes = [
   // { path: '', 						component: CapexComponent },
   { path: 'details/:id', 	component: CapexComponent },
   { path: 'add', 					component: CapexAddComponent },
-  { path: 'edit/:id', 		component: CapexEditComponent },
+  { path: 'edit/:id', 		component: CapexAddComponent },
   // { path: 'delete/:id', 	component: CapexRemoveComponent }
 ];
 

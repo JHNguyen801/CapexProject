@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CapexEditComponent } from './capex-edit.component';
+import { CapexAddComponent } from './capex-add-edit.component';
 
-describe('CapexEditComponent', () => {
-  let component: CapexEditComponent;
-  let fixture: ComponentFixture<CapexEditComponent>;
+describe('CapexAddComponent', () => {
+  let component: CapexAddComponent;
+  let fixture: ComponentFixture<CapexAddComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CapexEditComponent ]
+      declarations: [ CapexAddComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CapexEditComponent);
+    fixture = TestBed.createComponent(CapexAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
