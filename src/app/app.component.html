@@ -8,17 +8,19 @@
 		<a routerLink="/" routerLinkActive="active">
 			Home
 		</a>
-		<a routerLink="/add">
-			Request A Project
+		<a routerLink="/about" routerLinkActive="active">
+			About
 		</a>
 		<a routerLink="details/:id">
 			View Project
 		</a>
-		<!-- <a routerLink="edit/:id">
-			Edit Project
-		</a> -->
+		<a routerLink="/add">
+			Request A Project
+		</a>
 	</div>
+    <p>Current Date and Time: {{todayDate | date:'MMM/dd/yyyy h:mm a'}}</p>
 
+	<!-- <app-cape-search></app-cape-search> -->
 	<router-outlet></router-outlet>
 
 </div>

@@ -18,32 +18,29 @@ export class CapexAddComponent implements OnInit {
     private provider: ProjectService) { }
 
   ngOnInit(): void {
-    let budgetid = this.route.snapshot.params['id'];
+    let budgetid = Number.parseInt(this.route.snapshot.params['id']);
     if (budgetid) {
       this.title = 'Edit Project';
       this.project = this.provider.getProject(budgetid);
     }
     else {
       this.title = "Request Capex";
-      this.saveProject();
+      this.project = new Budget();
+      this.saveProject(this.project);
     }
     console.log(this.project);
   }
 
-  saveProject() {
-    this.project = this.provider.addProject();
-    // this.provider.addProject(this.project);
+  saveProject(project) {
     this.title = 'Edit Project';
-    this.provider.dataStorage();
-    // localStorage.setItem('Save_project', JSON.stringify('budget.json'));
-    // this.router.navigate(['', this.project.budgetId])
+    this.project = this.provider.addProject();
   }
 
   // saveProject() {
-  //   if (this.isComplete())
+  //   if (this.isComplete()){
   //     this.project = this.provider.addProject();
-  //   this.title = 'Edit Project';
-  //   localStorage.setItem('Save_project',JSON.stringify('budget.json'));
+  //     this.title = 'Edit Project';
+  //   }    
   // }
 
   // isComplete() {

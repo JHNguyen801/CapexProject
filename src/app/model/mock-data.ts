@@ -1,6 +1,7 @@
 import { Budget } from "./budget";
 
 export let BUDGET: Budget[] = [
+    
     {
         "budgetId": 1,
         "projectName": "laptop",

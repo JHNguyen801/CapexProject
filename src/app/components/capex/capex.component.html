@@ -1,34 +1,37 @@
 <!-- Project list -->
+<input [(ngModel)]="term" placeholder="Search for a capex info..." >
+
+<P></P>
+
 <table>
   <thead>
     <tr>
-        <th>Budget Id</th>
-        <th>Project Name</th>
-        <th>Budget Year</th>
-        <th>Budget Amount</th>
-        <th>Asset Class</th>
-        <th>Department</th>
-        <th>Business Justification</th>
-        <th>Requestor</th>
-        <th>Budget Status</th>
-        <th>Actual Spending</th>
-        <th>Remaining Budget</th>
+      <th>Budget Id</th>
+      <th>Project Name</th>
+      <th>Budget Year</th>
+      <th>Budget Amount</th>
+      <th>Asset Class</th>
+      <th>Department</th>
+      <th>Business Justification</th>
+      <th>Requestor</th>
+      <th>Budget Status</th>
+      <th>Actual Spending</th>
+      <th>Remaining Budget</th>
     </tr>
   </thead>
-<tr *ngFor="let project of projects">
-  <td>{{project.budgetId}}</td>
-  <td>{{project.projectName}}</td>
-  <td>{{project.budgetYear}}</td>
-  <td>{{project.budgetAmount |currency}}</td>
-  <td>{{project.assetClass}}</td>
-  <td>{{project.department}}</td>
-  <td>{{project.businessJustification}}</td>
-  <td>{{project.requestor}}</td>
-  <td>{{project.status}}</td>
-  <td>{{project.actualSpending | currency}}</td>
-  <td>{{project.budgetAmount - project.actualSpending | currency}}</td>
-  <a [routerLink]="['/edit', project.budgetId]"  class="btn btn-xs btn-primary right">Edit</a>
-</tr>
+  <tr *ngFor="let project of projects | filter: term">
+    <td>{{project.budgetId}}</td>
+    <td>{{project.projectName}}</td>
+    <td>{{project.budgetYear}}</td>
+    <td>{{project.budgetAmount |currency}}</td>
+    <td>{{project.assetClass}}</td>
+    <td>{{project.department}}</td>
+    <td>{{project.businessJustification}}</td>
+    <td>{{project.requestor}}</td>
+    <td>{{project.status}}</td>
+    <td>{{project.actualSpending | currency}}</td>
+    <td>{{project.budgetAmount - project.actualSpending | currency}}</td>
+    <a [routerLink]="['/edit', project.budgetId]" class="btn btn-xs btn-primary right">Edit</a>
+  </tr>
 
 </table>
-

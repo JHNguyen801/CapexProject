@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Budget } from '../model/budget';
 import { BUDGET } from '../model/mock-data';
@@ -7,21 +8,21 @@ import { BUDGET } from '../model/mock-data';
 })
 export class ProjectService {
 
-  // projectList : Budget = new Budget();
-  // dataStorage: Array<String>;
+  // define variables in the class project service 
+  project: Budget = new Budget();
+  localStorage: any;
+  dataStorage: any;
 
-  // constructor() { }
+  // class constructor
+  constructor(private http: HttpClient) {
+    this.localStorage = window.localStorage.getItem("capex");
+  }
 
   // retrieve the list of project from the budget
   getProjects(): Budget[] {
     return BUDGET;
   }
 
-  dataStorage = JSON.parse(window.localStorage.getItem('capex'));
-
-  if(dataStorage = ! null) {
-    this.dataStorage = JSON.parse(this.dataStorage);
-  }
   // retrieve the individual project
   getProject(id: number): Budget {
     let projects: Budget[] = this.getProjects();
@@ -31,56 +32,31 @@ export class ProjectService {
   }
 
   // add a project to the budget
-  addProject(): Budget{
+  addProject(): Budget {
     let projects: Budget[] = this.getProjects();
     let maxId: number;
-    if(projects && projects.length > 0){
+    if (projects && projects.length > 0) {
       maxId = projects[projects.length - 1].budgetId;
     }
-    else{
+    else {
       maxId = 0;
     }
 
-    let project: Budget = new Budget();
-    project.budgetId = maxId +1;
-    projects.push(project);
-    this.saveLocalStorage();
-    return project;
+    this.project.budgetId = maxId + 1;
+    projects.push(this.project);
+    this.saveLocalStorage(projects);
+    return this.project;
   }
 
-  // add a project to the budget
-  // addProject(project: Budget): void {
-  //   let projects: Budget[] = this.getProjects();
-  //   let target: Budget = projects.find(p => { return (p.budgetId == project.budgetId) });
-  //   if (!target) {
-  //     projects.push(project);
-  //   }
-  //   else {
-  //     Object.assign(target, project);
-  //   }
-  //   this.saveLocalStorage();
-  // }
+  // load local storage method
+  loadLocal() {
+    this.localStorage;
+    console.log(this.localStorage);
+  }
 
   // Save information in a local storage.
-  saveLocalStorage() {
-    window.localStorage.setItem("capex", JSON.stringify(this.dataStorage));
+  saveLocalStorage(projects) {
+    this.localStorage = window.localStorage.setItem("capex", JSON.stringify(projects, this.dataStorage));
   }
 
-  // remove a project from the budget
-  removeProject(id: number) {
-    let project: Budget[] = this.getProjects();
-    for (let i = 0; i < project.length; i++) {
-      if (project[0].budgetId == id) {
-        project.splice(i, 1);
-        break;
-      }
-    }
-    return project;
-  }
-
-  calculateRemaining() {
-    let project: Budget;
-    let remainingBalance = project.budgetAmount - project.actualSpending
-    return remainingBalance;
-  }
 }

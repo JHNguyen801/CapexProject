@@ -7,27 +7,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CapexAddComponent } from './components/capex-add-edit/capex-add-edit.component';
-import { CapexRemoveComponent } from './components/capex-remove/capex-remove.component';
 import { CapexComponent } from './components/capex/capex.component';
-import { CapexEntryComponent } from './components/capex-entry/capex-entry.component';
-import { CapeSearchComponent } from './components/capex-search/cape-search/cape-search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CapexAddComponent,
-    CapexRemoveComponent,
     CapexComponent,
-    CapexEntryComponent,
-    CapeSearchComponent
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    Ng2SearchPipeModule,
     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,140 +1,107 @@
 .active {
-	color: navy; 
+	color: navy;
 	text-decoration: underline;
 }
 
 /* Element
 -------------------------*/
-h1{
-    color: burlywood;
+h1 {
+	color: burlywood;
 }
 
-h2, h3{
-  color: darkcyan;
-  font-family: 'Caveat', cursive;
-  font-weight: 400;
+h2,
+h3 {
+	color: darkcyan;
+	font-family: 'Caveat', cursive;
+	font-weight: 400;
 }
 
-p, li{
-  font-size: 20px;
-  font-display:initial;
+p,
+li {
+	font-size: 20px;
+	font-display: initial;
 }
 
 /* Table header and row
 -------------------------*/
-table{
+/* table{
     border: 1px solid black;
+} */
+th {
+	text-align: center;
+	background-color: navy;
+	color: wheat;
+	padding: 10px;
 }
-th{
-    text-align: center;
-    background-color: navy;
-    color:wheat;
-    padding: 10px;
-}
-td{
-    text-align: left;
-    padding: 10px;
+
+td {
+	text-align: left;
+	padding: 10px;
 }
 
 img {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
 }
 
 /* Header and Footer
 -------------------------*/
-header, footer {
+header,
+footer {
 	background: #2B2D42;
 	color: #8D99AE;
-  }
-  /* header */
-  header {
+}
+
+/* header */
+header {
 	padding-top: 50px;
 	position: relative;
-  }
-  header h1, header h2 {
+}
+
+header h1,
+header h2 {
 	color: #EDF2F4;
 	margin: 0;
-  }
-
-  /* Navigation
--------------------------*/ 
-.nav > li > a {
-    color: #ffffff;
 }
-.nav > li > a:hover {
-        color: #fff;
+
+/* Navigation
+-------------------------*/
+.nav>li>a {
+	color: #ffffff;
+}
+
+.nav>li>a:hover {
+	color: #fff;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
 .navbar {
-    background-color: #006E9A;
-    color: #006E9A;
+	background-color: #006E9A;
+	color: #006E9A;
 }
 
 /* .navbar {
 	overflow: hidden;
 	background-color: #333;
 } */
-  
+
 .navbar a {
 	float: left;
 	font-size: 16px;
-	color:whitesmoke;
+	color: whitesmoke;
 	text-transform: uppercase;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-  }
-  
-  .dropdown {
-	float: left;
-	overflow: hidden;
-  }
-  
-  .dropdown .dropbtn {
-	font-size: 16px;  
-	border: none;
-	text-transform: uppercase;
-	outline: none;
-	color: white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit;
-	margin: 0;
-  }
-  
-  .navbar .current{
+}
+
+
+.navbar .current {
 	background-color: steelblue;
-  }
-  .navbar a:hover, .dropdown:hover .dropbtn {
-	background-color:steelblue;
-  }
-  
-  .dropdown-content {
-	display: none;
-	position: absolute;
-	text-transform: uppercase;
-	background-color: #333;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-  }
-  
-  .dropdown-content a {
-	float: none;
-	color:whitesmoke;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-  }
-  
-  .dropdown-content a:hover {
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
 	background-color: steelblue;
-  }
-  
-  .dropdown:hover .dropdown-content {
-	display: block;
-  }
+}

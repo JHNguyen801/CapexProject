@@ -10,10 +10,25 @@ import { ProjectService } from 'src/app/services/project.service';
 export class CapexComponent implements OnInit {
 
   projects: Budget[];
-  constructor(private provider: ProjectService) { }
+  defaultStorage: Budget[];
+  localStorage: any;
+  dataItems: any;
+  term: any;
+
+  constructor(private provider: ProjectService) { 
+    this.defaultStorage = this.provider.getProjects();
+    this.localStorage = this.provider.loadLocal();
+  }
 
   ngOnInit(): void {
-    this.projects = this.provider.getProjects();
+    if(this.localStorage !== null){
+      this.projects = this.defaultStorage;
+      console.log(this.projects);
+    }
+    else{
+      this.projects = this.localStorage;
+      console.log(this.projects);
+    }
   }
 
 }
